@@ -1,11 +1,13 @@
 import * as React from 'react';
-import Home from './pages/home/Home';
 import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
-import Users from './pages/users/Users';
-import Products from './pages/Products/Products';
 import Navbar from './components/navbar/Navbar';
 import Footer from './components/footer/Footer';
 import Menu from './components/menu/Menu';
+import Home from './pages/home/Home';
+import Users from './pages/users/Users';
+import Login from './pages/login/Login';
+import Products from './pages/products/Products';
+import './styles/global.scss';
 
 export default function App() {
   const Layout = () => {
@@ -43,7 +45,12 @@ export default function App() {
           element: <Products />,
         }
       ]
+    },
+    {
+      path: "/login",
+      element: <Login />,
     }
+
   ])
 
   return (
