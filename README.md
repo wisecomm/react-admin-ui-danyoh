@@ -14,3 +14,6 @@ Shift + Option + A
 Shift + Option + 마우스
 
 
+초보자를 위한 Prettier & ESLint 
+https://velog.io/@2_hyeonju/Prettier-ESLint-%EC%99%84%EC%A0%84-%EC%A0%95%EB%B3%B5
+
