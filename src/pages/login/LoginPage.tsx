@@ -1,9 +1,24 @@
+import { useState } from 'react';
 import { Avatar, Box, Button, Checkbox, Container, FormControlLabel, Grid2, Link, Paper, TextField, Typography } from '@mui/material'
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined'
-import { Link as RouterLink } from 'react-router-dom'
-
+import { Link as RouterLink, useNavigate } from 'react-router-dom'
 
 function LoginPage() {
+    const [loginInput, setLoginInput] = useState({ username: '', password: '' });
+    const navigate = useNavigate();
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        console.log(loginInput);
+        // Add your form validation and authentication logic here
+        // If successful, navigate to another page
+        navigate('/', { replace: true }); // Replace '/dashboard' with the desired route        
+    };
+    const handleInputChange = (event) => {
+        const { name, value } = event.target;
+        setLoginInput({ ...loginInput, [name]: value });
+    };
+
     return (
         <Container maxWidth='xs' sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh' }}  >
             <Paper elevation={10} sx={{ padding: 2 }}>
@@ -21,7 +36,7 @@ function LoginPage() {
                 </Typography>
                 <Box
                     component='form'
-                    //  onSubmit={handleSubmit}
+                    onSubmit={handleSubmit}
                     noValidate sx={{ mt: 1 }}>
                     <TextField
                         placeholder='Enter username'
@@ -29,12 +44,14 @@ function LoginPage() {
                         required
                         autoFocus
                         sx={{ mb: 2 }}
+                        onChange={handleInputChange}
                     />
                     <TextField
                         placeholder='Enter password'
                         fullWidth
                         required
                         type='password'
+                        onChange={handleInputChange}
                     />
                     <FormControlLabel control={<Checkbox value='remember' color='primary' />}
                         label='Remember me'
