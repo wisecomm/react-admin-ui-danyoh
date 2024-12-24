@@ -9,6 +9,7 @@ import Login from './pages/login/Login';
 import Products from './pages/products/Products';
 import './styles/global.scss';
 import LoginSignup from './pages/login/LoginSignup';
+import LoginPage from './pages/login/LoginPage';
 
 export default function App() {
   const Layout = () => {
@@ -54,7 +55,11 @@ export default function App() {
     {
       path: "/loginsignup",
       element: <LoginSignup />,
-    }
+    },
+    {
+      path: "/loginpage",
+      element: <LoginPage />,
+    },
 
   ])
 
