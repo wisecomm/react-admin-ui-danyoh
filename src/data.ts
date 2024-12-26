@@ -15,6 +15,12 @@ export const menu = [
           url: "/users/1",
           icon: "user.svg",
         },
+        {
+          id: 3,
+          title: "Grid",
+          url: "/grid",
+          icon: "user.svg",
+        },
       ],
     },
     {

@@ -10,6 +10,9 @@ import Products from './pages/products/Products';
 import './styles/global.scss';
 import LoginSignup from './pages/login/LoginSignup';
 import LoginPage from './pages/login/LoginPage';
+import GridList from './pages/grid/GridList';
+import DataGridDemo from './pages/grid/DataGridDemo';
+import Demo from './pages/grid/Demo';
 
 export default function App() {
   const Layout = () => {
@@ -59,6 +62,15 @@ export default function App() {
     {
       path: "/loginpage",
       element: <LoginPage />,
+    },
+    {
+      path: "/grid",
+//      element: <GridList />,
+      element: <Demo />,
+    },
+    {
+      path: "/datagriddemo",
+      element: <DataGridDemo />,
     },
 
   ])
